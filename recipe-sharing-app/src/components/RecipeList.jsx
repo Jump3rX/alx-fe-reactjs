@@ -3,7 +3,13 @@ import useRecipeStore from "./recipeStore";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 function RecipeList() {
-  const { filteredRecipes, filterRecipes } = useRecipeStore();
+  const {
+    filteredRecipes,
+    filterRecipes,
+    favorites,
+    addFavorite,
+    removeFavorite,
+  } = useRecipeStore();
   useEffect(() => {
     filterRecipes();
   }, [filterRecipes]);
@@ -25,6 +31,15 @@ function RecipeList() {
             <h3>{recipe.title || recipe.name || "Add Recipe title"}</h3>
             <p>{recipe.description || "Add Recipe description"}</p>
             <Link to={`/recipes/${recipe.id}`}>Read more</Link>
+            <button
+              onClick={() =>
+                favorites.includes(recipe.id)
+                  ? removeFavorite(recipe.id)
+                  : addFavorite(recipe.id)
+              }
+            >
+              {favorites.includes(recipe.id) ? "Unfavorite" : "Favorite"}
+            </button>
           </div>
         ))
       )}
