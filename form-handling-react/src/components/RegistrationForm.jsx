@@ -2,14 +2,12 @@ import React from "react";
 import { useState } from "react";
 
 function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
-    if (!formData.username || !formData.email || !formData.password) {
+    if (!username || !email || !password) {
       alert("All fields must be completed!");
     } else {
       console.log(formData);
@@ -24,10 +22,8 @@ function RegistrationForm() {
           type="text"
           name="username"
           id="username"
-          onChange={(e) =>
-            setFormData({ ...formData, username: e.target.value })
-          }
-          value={formData.username}
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
           required
         />
 
@@ -36,8 +32,8 @@ function RegistrationForm() {
           type="email"
           name="email"
           id="email"
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          value={formData.email}
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
           required
         />
 
@@ -46,14 +42,12 @@ function RegistrationForm() {
           type="password"
           name="password"
           id="password"
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
-          value={formData.password}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
           required
         />
 
-        <button type="submit"></button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
