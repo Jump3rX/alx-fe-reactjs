@@ -1,4 +1,4 @@
-import React from "react";
+orimport React from "react";
 import { useQuery } from "@tanstack/react-query";
 
 function PostsComponent() {
@@ -9,9 +9,9 @@ function PostsComponent() {
     }
     return response.json();
   };
-  const { data, isError, isLoading, refetch } = useQuery("posts", fetchPosts);
+  const { data, error,isError, isLoading, refetch } = useQuery("posts", fetchPosts);
   if (isLoading) return <p>Loading posts...</p>;
-  if (isError) return <p>Error fetching posts</p>;
+  if (isError) return <p>Error fetching posts:{error.message}</p>;
   return (
     <div>
       <h2>Posts</h2>
