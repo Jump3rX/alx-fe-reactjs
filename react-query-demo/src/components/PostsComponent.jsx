@@ -9,9 +9,16 @@ function PostsComponent() {
     }
     return response.json();
   };
-  const { data, error, isLoading, refetch } = useQuery("posts", fetchPosts);
+  const { data, error, isError, isLoading, refetch } = useQuery({
+    queryKey: ["posts"],
+    queryFn: fetchPosts,
+    cacheTime: 5 * 60 * 1000,
+    staleTime: 30 * 1000,
+    refetchOnWindowFocus: false,
+    keepPreviousData: true,
+  });
   if (isLoading) return <p>Loading posts...</p>;
-  if (error) return <p>Error fetching posts: {error.message}</p>;
+  if (isError) return <p>Error fetching posts{error.message}</p>;
   return (
     <div>
       <h2>Posts</h2>
