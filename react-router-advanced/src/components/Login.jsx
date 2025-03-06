@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { fakeAuth } from "./ProtectedRoute";
+import { useAuth } from "./ProtectedRoute";
 function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    fakeAuth.login();
+    useAuth.login();
     navigate("/profile");
   };
 

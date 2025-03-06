@@ -2,17 +2,17 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const fakeAuth = {
+export const useAuth = {
   isAuthenticated: false,
-  login: () => (fakeAuth.isAuthenticated = true),
-  logout: () => (fakeAuth.isAuthenticated = false),
+  login: () => (useAuth.isAuthenticated = true),
+  logout: () => (useAuth.isAuthenticated = false),
 };
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    fakeAuth.isAuthenticated
+    useAuth.isAuthenticated
   );
   useEffect(() => {
-    setIsAuthenticated(fakeAuth.isAuthenticated);
+    setIsAuthenticated(useAuth.isAuthenticated);
   }, []);
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;

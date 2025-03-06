@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom";
-import { fakeAuth } from "./ProtectedRoute";
+import { useAuth } from "./ProtectedRoute";
 import { useState, useEffect } from "react";
 function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    fakeAuth.isAuthenticated
+    useAuth.isAuthenticated
   );
   useEffect(() => {
-    setIsAuthenticated(fakeAuth.isAuthenticated);
+    setIsAuthenticated(useAuth.isAuthenticated);
   }, []);
 
   const handleLogout = () => {
-    fakeAuth.logout();
+    useAuth.logout();
     setIsAuthenticated(false);
   };
   return (
