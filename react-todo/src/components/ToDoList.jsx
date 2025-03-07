@@ -1,7 +1,7 @@
 import React from "react";
-import AddToDoForm from "./AddToDoForm";
+import AddTodoForm from "./AddTodoForm";
 import { useState } from "react";
-function ToDoList() {
+function TodoList() {
   const [tasks, setTasks] = useState([]);
 
   function addToDo(task) {
@@ -24,7 +24,7 @@ function ToDoList() {
   }
   return (
     <div>
-      <AddToDoForm addToDo={addToDo} />
+      <AddTodoForm addToDo={addToDo} />
       <hr />
       <h3>Tasks</h3>
       <ul>
@@ -54,4 +54,4 @@ function ToDoList() {
   );
 }
 
-export default ToDoList;
+export default TodoList;
