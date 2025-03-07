@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ToDoList from "./components/ToDoList";
+import TodoList from "./components/ToDoList";
 
 function App() {
   return (
     <>
-      <ToDoList />
+      <TodoList />
     </>
   );
 }
