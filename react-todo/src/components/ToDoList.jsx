@@ -30,7 +30,7 @@ function TodoList() {
       <ul>
         {tasks.length > 0 ? (
           tasks.map((task, i) => (
-            <div key={i}>
+            <div key={task.id}>
               <li
                 onClick={() => toggleToDo(task.id)}
                 style={{
