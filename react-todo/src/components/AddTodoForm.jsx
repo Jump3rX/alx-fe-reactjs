@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-function AddToDoForm({ addToDo }) {
+function AddTodoForm({ addToDo }) {
   const [task, setTask] = useState({
     id: Date.now(),
     title: "",
@@ -29,4 +29,4 @@ function AddToDoForm({ addToDo }) {
   );
 }
 
-export default AddToDoForm;
+export default AddTodoForm;
