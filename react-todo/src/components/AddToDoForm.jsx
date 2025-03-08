@@ -6,9 +6,7 @@ function AddToDoForm({ addToDo }) {
     complete: false,
   });
   function handleAddToDo(e) {
-    e.target.value !== ""
-      ? setTask((t) => ({ ...t, title: e.target.value }))
-      : alert("Please input task");
+    setTask((t) => ({ ...t, title: e.target.value }));
   }
 
   function handleSubmit(e) {
