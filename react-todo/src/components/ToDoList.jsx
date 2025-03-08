@@ -40,7 +40,7 @@ function TodoList() {
               >
                 {i + 1}: {task.title}{" "}
                 <small style={{ color: task.complete ? "green" : "yellow" }}>
-                  || {task.complete ? "<Completed>" : "<Not Completed>"}
+                  || {task.complete ? "Completed" : "Not Completed"}
                 </small>
               </li>
               <button onClick={() => deleteToDo(task.id)}>Delete</button>
