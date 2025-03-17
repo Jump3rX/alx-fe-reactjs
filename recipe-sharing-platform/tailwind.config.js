@@ -1,9 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.{html,js,tsx,jsx}", "./public/index.html"], // Updated to only use content
-  darkMode: false,
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false, // You can set it to 'media' or 'class' if needed
   theme: {
     extend: {},
   },
-  variants: { extend: {} },
   plugins: [],
 };
