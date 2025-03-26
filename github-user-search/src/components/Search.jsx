@@ -24,10 +24,10 @@ function Search() {
       if (userInfo) {
         setUserData(userInfo);
       } else {
-        setError("Looks like we can't find the user.");
+        setError("Looks like we can't find the user");
       }
     } catch (err) {
-      setError("An error occurred while fetching data.");
+      setError("An error occurred while fetching data");
     } finally {
       setLoading(false);
     }
@@ -51,7 +51,6 @@ function Search() {
         <button type="submit">Search</button>
       </form>
 
-      {/* Display states: Loading, Error, or User Data */}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {userData && (
