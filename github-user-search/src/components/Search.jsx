@@ -24,7 +24,7 @@ function Search() {
       if (userInfo) {
         setUserData(userInfo);
       } else {
-        setError("Looks like we can't find the user");
+        setError("Looks like we cant find the user");
       }
     } catch (err) {
       setError("An error occurred while fetching data");
@@ -56,7 +56,7 @@ function Search() {
       {userData && (
         <div className="card">
           <img src={userData.avatar_url} alt="User Avatar" />
-          <h3>Name: {userData.name || "N/A"}</h3>
+          <h3>Name: {userData.login || "N/A"}</h3>
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
             Profile Link
           </a>
