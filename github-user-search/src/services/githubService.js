@@ -3,7 +3,7 @@ import axios from "axios";
 const key = import.meta.env.VITE_APP_GITHUB_API_KEY;
 const baseURL = "https://api.github.com/search/users?q=";
 
-export const fetchUsers = async (username, location, minRepos) => {
+export const fetchUserData = async (username, location, minRepos) => {
   try {
     let query = username ? `${username} in:login` : "";
     if (location) query += ` location:${location}`;
